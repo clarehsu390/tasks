@@ -12,7 +12,7 @@
 #
 
 class Donation < ApplicationRecord
-    validates :address, :vehicle_size, :address, :receipt_needed?, presence: true
+    validates :address, :vehicle_size, :receipt_needed?, :due_at, presence: true
     validates :receipt_needed?, inclusion: { in: [true, false]}
     validates :vehicle_size, inclusion: { in: ['bike', 'car', 'truck']}
 end

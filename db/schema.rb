@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403024141) do
+ActiveRecord::Schema.define(version: 20180403191615) do
 
   create_table "donations", force: :cascade do |t|
-    t.integer "vehicle_size"
+    t.string "vehicle_size"
     t.string "address"
     t.boolean "receipt_needed?"
     t.datetime "due_at"
