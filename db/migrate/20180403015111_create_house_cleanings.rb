@@ -4,6 +4,7 @@ class CreateHouseCleanings < ActiveRecord::Migration[5.1]
       t.string :address
       t.integer :num_of_bathrooms
       t.text :type_of_cleaning
+      t.datetime :due_at
       t.timestamps
     end
   end

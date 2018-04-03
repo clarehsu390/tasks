@@ -10,13 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205192322) do
+ActiveRecord::Schema.define(version: 20180403024141) do
+
+  create_table "donations", force: :cascade do |t|
+    t.integer "vehicle_size"
+    t.string "address"
+    t.boolean "receipt_needed?"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "house_cleanings", force: :cascade do |t|
+    t.string "address"
+    t.integer "num_of_bathrooms"
+    t.text "type_of_cleaning"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movings", force: :cascade do |t|
+    t.integer "num_of_people"
+    t.string "address"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "others", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shoppings", force: :cascade do |t|
+    t.string "store_name", null: false
+    t.text "list", null: false
+    t.decimal "expected_expense", null: false
+    t.datetime "due_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.datetime "due_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
 end

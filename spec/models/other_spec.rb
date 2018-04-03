@@ -1,19 +1,17 @@
 # == Schema Information
 #
-# Table name: tasks
+# Table name: others
 #
 #  id          :integer          not null, primary key
 #  title       :string
+#  description :text
 #  due_at      :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  category_id :integer
 #
 
-class Task < ApplicationRecord
-  validates :title, presence: true
-  validates :due_at, presence: true
-  validates :category, presence: true
-  
-  belongs_to :category
+require 'rails_helper'
+
+RSpec.describe Other, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
