@@ -12,6 +12,22 @@
 
 require 'rails_helper'
 
-RSpec.describe Moving, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Moving do
+  it "should validate presence of number of people" do
+    moving = Moving.new
+    moving.should_not be_valid
+    moving.errors[:num_of_people].should == ["can't be blank"]
+  end
+
+  it "should validate presence of address" do
+    moving = Moving.new
+    moving.should_not be_valid
+    moving.errors[:address].should == ["can't be blank"]
+  end
+
+  it "should validate presence of due_at" do
+    moving = Moving.new
+    moving.should_not be_valid
+    moving.errors[:due_at].should == ["can't be blank"]
+  end
 end

@@ -13,6 +13,34 @@
 
 require 'rails_helper'
 
-RSpec.describe HouseCleaning, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe HouseCleaning do
+  it "should validate presence of address" do
+    house_cleaning = HouseCleaning.new
+    house_cleaning.should_not be_valid
+    house_cleaning.errors[:address].should == ["can't be blank"]
+  end
+
+  it "should validate presence of number of bathrooms" do
+    house_cleaning = HouseCleaning.new
+    house_cleaning.should_not be_valid
+    house_cleaning.errors[:num_of_bathrooms].should == ["can't be blank"]
+  end
+
+  it "should validate presence of type of cleaning" do
+    house_cleaning = HouseCleaning.new
+    house_cleaning.should_not be_valid
+    house_cleaning.errors[:type_of_cleaning].include?(
+      "can't be blank")
+  end
+
+  it "should validate presence of due_at" do
+    house_cleaning = HouseCleaning.new
+    house_cleaning.should_not be_valid
+    house_cleaning.errors[:due_at].should == ["can't be blank"]
+  end
+
+  it "should validate the right type of cleaning" do
+    house_cleaning = HouseCleaning.new(address: "825 Battery St", num_of_bathrooms: 3, type_of_cleaning: "normal", due_at: 30.minutes.from_now)
+    house_cleaning.should be_valid
+  end
 end

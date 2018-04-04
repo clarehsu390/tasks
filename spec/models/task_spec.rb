@@ -26,7 +26,7 @@ describe Task do
   end
 
   it "should be able to create a new Task" do
-    task = Task.new(title: "Pickup my groceries", due_at: 30.minutes.from_now)
+    task = Task.new(title: "Pickup my groceries", due_at: 30.minutes.from_now, category_id: 1)
     task.save.should == true
     task.should_not be_new_record
   end

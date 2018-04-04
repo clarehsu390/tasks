@@ -15,5 +15,8 @@ class Task < ApplicationRecord
   validates :due_at, presence: true
   validates :category, presence: true
   
-  belongs_to :category
+  belongs_to :category,
+  primary_key: :id,
+  foreign_key: :category_id,
+  class_name: :Category
 end
