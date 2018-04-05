@@ -1,5 +1,34 @@
 {
   "name": "task_fields",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.5",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "webpack": "^4.5.0"
+  },
+  "description": "There are many categories of tasks in the world. We would like to give the user the choose what they need done and then ask them the right questions based on that choice. At the moment, however, we are only asking them for a title and due date.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarehsu390/tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clarehsu390/tasks/issues"
+  },
+  "homepage": "https://github.com/clarehsu390/tasks#readme"
 }

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root to: "tasks#index"
   
   resources :tasks, defaults: { format: :json }
+  resources :donations, defaults: { format: :json}
+  resources :shoppings, defaults: { format: :json }
+
+  root "static_pages#root"
+
 end
