@@ -26,12 +26,6 @@ describe Shopping do
     shopping.errors[:list].should == ["can't be blank"]
   end
 
-  it "should validate presence of due_at" do
-    shopping = Shopping.new
-    shopping.should_not be_valid
-    shopping.errors[:due_at].should == ["can't be blank"]
-  end
-
   it "should validate presence of expected expense" do
     shopping = Shopping.new
     shopping.should_not be_valid

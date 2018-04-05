@@ -11,12 +11,9 @@
 #
 
 class Task < ApplicationRecord
+  serialize :addition_info, JSON
   validates :title, presence: true
   validates :due_at, presence: true
-  validates :category, presence: true
-  
-  belongs_to :category,
-  primary_key: :id,
-  foreign_key: :category_id,
-  class_name: :Category
+  validates :category_id, presence: true
+  validates :addition_info, presence: true
 end

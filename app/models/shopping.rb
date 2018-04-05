@@ -12,5 +12,5 @@
 #
 
 class Shopping < ApplicationRecord
-    validates :store_name, :list, :expected_expense, :due_at, presence: true
+    validates :store_name, :list, :expected_expense, presence: true
 end

@@ -24,10 +24,4 @@ describe Moving do
     moving.should_not be_valid
     moving.errors[:address].should == ["can't be blank"]
   end
-
-  it "should validate presence of due_at" do
-    moving = Moving.new
-    moving.should_not be_valid
-    moving.errors[:due_at].should == ["can't be blank"]
-  end
 end

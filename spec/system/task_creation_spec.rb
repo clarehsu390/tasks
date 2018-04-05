@@ -4,6 +4,7 @@ describe "Task Creation", type: :feature do
   it "should submit a new task" do
     visit "/tasks/new"
     fill_in("Title", with: "My First Task")
+    fill_in("Category", with: 2)
     click_button("Create Task")
     
     current_path.should == "/"

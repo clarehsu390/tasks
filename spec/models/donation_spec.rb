@@ -26,12 +26,6 @@ describe Donation do
     donation.errors[:receipt_needed?].include?("is not included in the list")
   end
 
-  it "should validate presence of due_at" do
-    donation = Donation.new
-    donation.should_not be_valid
-    donation.errors[:due_at].should == ["can't be blank"]
-  end
-
   it "should validate presence of vehicle_size" do
     donation = Donation.new
     donation.should_not be_valid

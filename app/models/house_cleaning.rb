@@ -12,6 +12,6 @@
 #
 
 class HouseCleaning < ApplicationRecord
-    validates :address, :num_of_bathrooms, :type_of_cleaning, :due_at, presence: true
+    validates :address, :num_of_bathrooms, :type_of_cleaning, presence: true
     validates :type_of_cleaning, inclusion: { in: ['light', 'normal', 'heavy']}
 end

@@ -11,5 +11,5 @@
 #
 
 class Moving < ApplicationRecord
-    validates :num_of_people, :address, :due_at, presence: true
+    validates :num_of_people, :address, presence: true
 end
