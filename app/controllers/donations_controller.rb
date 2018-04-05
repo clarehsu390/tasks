@@ -4,6 +4,15 @@ class DonationsController < ApplicationController
         @donation = Donation.all
     end
 
+    def create
+        @donation = Donation.new(donation_params)
+        if @donation.save!
+            flash[:notice] = "Task has been created."
+        else
+            flash[:errors]
+        end
+    end
+
     private
 
     def donation_params

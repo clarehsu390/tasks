@@ -33,7 +33,7 @@ describe Shopping do
   end
 
   it "should check if expected expense is a decimal" do
-    shopping = Shopping.new(store_name: "Target", list: "toilet paper, shampoo", expected_expense: 10.00, due_at: 30.minutes.from_now)
+    shopping = Shopping.new(store_name: "Target", list: "toilet paper, shampoo", expected_expense: 10.00)
     expect(shopping[:expected_expense]).to be_kind_of(Numeric)
   end
 end

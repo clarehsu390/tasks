@@ -34,7 +34,7 @@ describe HouseCleaning do
   end
 
   it "should validate the right type of cleaning" do
-    house_cleaning = HouseCleaning.new(address: "825 Battery St", num_of_bathrooms: 3, type_of_cleaning: "normal", due_at: 30.minutes.from_now)
+    house_cleaning = HouseCleaning.new(address: "825 Battery St", num_of_bathrooms: 3, type_of_cleaning: "normal")
     house_cleaning.should be_valid
   end
 end

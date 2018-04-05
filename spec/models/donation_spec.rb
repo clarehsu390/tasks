@@ -33,7 +33,7 @@ describe Donation do
   end
 
   it "should include right vehicle_size" do
-    donation = Donation.new(vehicle_size: "car", address: "825 Battery Street", receipt_needed?: true, due_at: 30.minutes.from_now)
+    donation = Donation.new(vehicle_size: "car", address: "825 Battery Street", receipt_needed?: true)
     donation.should be_valid
   end
 end

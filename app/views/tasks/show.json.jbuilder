@@ -1,0 +1,1 @@
+json.extract! @task, :title, :addition_info, :due_at
