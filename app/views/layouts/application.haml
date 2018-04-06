@@ -1,0 +1,29 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    %title= page_title
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+  %body
+    
+    %nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      %a.navbar-brand{href: root_path} Task Fields
+        
+    %main.container{role: 'container'}
+      .row
+        .col-lg-12
+          -if header_title
+            %h1= header_title
+
+          -if notice
+            .alert.alert-success= notice
+
+          -if alert
+            .alert.alert-danger= alert
+
+          = yield
