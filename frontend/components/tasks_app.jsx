@@ -7,6 +7,7 @@ const TasksApp = () => {
         <div>
             <h1>Tasks</h1>
             <TasksContainer />
+            <CreateTaskContainer/>
             </div>
     );
 };
