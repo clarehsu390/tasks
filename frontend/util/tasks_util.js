@@ -4,3 +4,11 @@ export const fetchAllTasks = () => (
         url: '/tasks'
     })
 );
+
+export const createTask = (task) => (
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: { task }
+    })
+);

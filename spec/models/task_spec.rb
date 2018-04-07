@@ -2,12 +2,13 @@
 #
 # Table name: tasks
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  due_at      :datetime
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
+#  id            :integer          not null, primary key
+#  title         :string
+#  due_at        :datetime
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  category_id   :integer
+#  addition_info :text
 #
 
 require 'rails_helper'

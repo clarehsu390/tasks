@@ -9,7 +9,8 @@ class TasksController < ApplicationController
   
   def create
     @task = Task.new(params.require(:task).permit(:title, :due_at, :category_id, :addition_info))
-    p @task[:category_id]
+    p @task.due_at
+    # @task.due_at = DateTime.parse(@task.due_at)
     # case @task[:category_id]
     #   when 1
     #     @task[:addition_info] = Shopping.new(params.require(:shopping).permit(:store_name, :list, :expected_expense))
@@ -28,9 +29,9 @@ class TasksController < ApplicationController
     #   end
     if @task.save
       flash[:notice] = "Task has been created."
-      redirect_to root_path
+      render 'tasks/show'
     else
-      render :new
+      render json: @task.errors.full_messages
     end
   end
   
