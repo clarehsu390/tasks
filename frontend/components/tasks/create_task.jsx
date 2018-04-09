@@ -53,6 +53,7 @@ export default class CreateTask extends React.Component {
                     </label>
                 <input type="submit"/>
                </form>
+               <Other newTask={this.props.newTask}/>
              
       </div>);
    }
