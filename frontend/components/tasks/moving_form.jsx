@@ -54,6 +54,8 @@ export default class MovingForm extends React.Component {
 
                 <input value={this.state.addition_info.address} onChange={this.updateAdditionalInfo('address')}/>
                    </form>
+
+                <input type="submit"/>
                </div>
        );
    }

@@ -39,7 +39,32 @@ export default class CleaningForm extends React.Component {
 
    render() {
        <div>
-           <form>
+           <form onSubmit={this.handleSubmit}>
+            <label>Title:
+                </label>
+            <input value={this.state.title} onChange={this.update('title')} />
+
+            <label>Address:
+                </label>
+            <input value={this.state.addition_info.address} onChange={this.updateAdditionalInfo('address')} />
+
+            <label>Number of bathrooms:
+                </label>
+            
+            <input value={this.state.addition_info.num_of_bathrooms}
+            onChange={this.updateAdditionalInfo('num_of_bathrooms')}/>
+
+            <label>Type of Cleaning:
+                </label>
+
+                <select onChange={this.updateAdditionalInfo('type')}>
+                    <option value="light">Light</option>
+                    <option value="normal">Normal</option>
+                    <option value="heavy">Heavy</option>
+                    </select>
                </form>
-           </div>
+
+               <input type="submit"/>
+           </div>;
    }
+}

@@ -35,3 +35,30 @@ export default class DonationForm extends React.Component {
            addition_info: Object.assign({}, this.state.addition_info, { [property]: e.currentTarget.value})
        });
    }
+
+   render() {
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Title:
+                        </label>
+                    <input value={this.state.title} onChange={this.update('title')}/>
+
+                    <label>Address:
+                        </label>
+                    <input value={this.state.addition_info.address} onChange={this.updateAdditionalInfo('address')}/>
+
+                    <label>Size of Vehicle:
+                        </label>
+                    <select onChange={this.updateAdditionalInfo('vehicle_size')}>
+                        <option value="bicycle">Bicycle</option>
+                        <option value="car">Car</option>
+                        <option value="truck">Truck</option>
+                        </select>
+
+                    <input type="submit"/>
+                    </form>
+                </div>
+        );
+   }
+}
