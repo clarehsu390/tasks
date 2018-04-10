@@ -9,19 +9,9 @@ export default class CreateTask extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "",
-            due_at: Date.now(),
-            addition_info: {
-                store_name: "",
-                list: ""
-            },
             category: ""
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCategory = this.handleCategory.bind(this);
-        this.update = this.update.bind(this);
-        this.updateAdditionalInfo = this.updateAdditionalInfo;
-
     }
     
     handleSubmit(e) {
@@ -41,28 +31,27 @@ export default class CreateTask extends React.Component {
    }
 
    handleCategory(e) {
-       if (this.state.category) {
-
-           switch(e.target.value) {
-               case 'shopping':
-                   this.setState({category: e.target.value})
-                   return <ShoppingForm newTask={this.props.newTask}/>
-               case 'donation':
-                   this.setState({category: e.target.value})
-                   return <DonationForm newTask={this.props.newTask}/>
-               case 'moving':
-                   this.setState({category: e.target.value})
-                   return <MovingForm newTask={this.props.newTask}/>
-               case 'cleaning':
-                   this.setState({category: e.target.value})
-                   return <CleaningForm newTask={this.props.newTask}/>
-               case 'other':
-               console.log('here')
-                   this.setState({category: e.target.value})
-                   return <OtherForm newTask={this.props.newTask}/>
-           }
-       }
+        this.setState({category: e.target.value});
    }
+
+   renderCategoryForm() {
+    switch(this.state.category) {
+        case 'shopping':
+     
+            return <ShoppingForm newTask={this.props.newTask}/>
+        case 'donation':
+    
+            return <DonationForm newTask={this.props.newTask}/>
+        case 'moving':
+            return <MovingForm newTask={this.props.newTask}/>
+        case 'cleaning':
+            return <CleaningForm newTask={this.props.newTask}/>
+        case 'other':
+            console.log('here');
+            console.log(this.state);
+            return <OtherForm newTask={this.props.newTask}/>
+    }
+}
 
    render() {
       return ( 
@@ -78,7 +67,7 @@ export default class CreateTask extends React.Component {
                   </select>
               </section>
 
-              {this.handleCategory()}
+              {this.renderCategoryForm()}
              
       </div>);
    }
